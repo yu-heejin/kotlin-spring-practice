@@ -1,12 +1,16 @@
 version: '3'
 
 services:
-  database:
-    image: postgres:latest
-    container_name: database
+  mysql:
+    container_name: mysql
+    image: mysql:latest
     ports:
-      - "5432:5432"
+      - "3306:3306"
+    restart: always
     environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: 1234
-      POSTGRES_DB: demo
+      MYSQL_DATABASE: demo
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: 1234
+    command: # 명령어 실행
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
