@@ -10,25 +10,25 @@ server:  # 서버 관련 설정
 spring:
   datasource:
     driver-class-name: org.mysql.jdbc.Driver
-    url: jdbc:mariadb://lourl: jdbc:mysql://localhost:3306/demo
+    url: jdbc:mysql://lourl: jdbc:mysql://localhost:3306/demo
     username: root
     password: 1234
   jpa:
-    open-in-view: true
+    open-in-view: true    # 영속성 컨텍스트가 트랜잭션 범위를 넘어서 레이어까지 유지
     hibernate:
-      ddl-auto: create
+      ddl-auto: create    # 기존 테이블이 있는 경우 drop 후 다시 create
       use-new-id-generator-mappings: false
     properties:
       hibernate:
-        show_sql: false
+        show_sql: false    # 로그에 이미 sql을 찍어놨기 때문에 false
         format_sql: true
         highlight_sql: true
 
 logging:
   pattern:
-    console: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
+    console: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"    # 해당 형식에 맞게 로그가 출력
   level:
     org:
       hibernate:
-        SQL: debug
+        SQL: debug   # SQL 실행 시 로그에 출력된다.
         type.descriptor.sql: trace
