@@ -32,6 +32,7 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("com.mysql:mysql-connector-j")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
 }
 
 // 플러그인에서 오픈해주는 것 외에 추가로 오픈해주는 것을 명시
