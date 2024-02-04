@@ -9,8 +9,8 @@ server:  # 서버 관련 설정
 
 spring:
   datasource:
-    driver-class-name: org.mysql.jdbc.Driver
-    url: jdbc:mysql://lourl: jdbc:mysql://localhost:3306/demo
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo
     username: root
     password: 1234
   jpa:
